@@ -41,9 +41,9 @@ npm install express mysql2 cors multer jsonwebtoken bcrypt dotenv
 ```text
 PORT=3000
 DB_HOST=localhost
-DB_USER=samplevaulrf2
-DB_PASS=samplevaulrf2
-DB_NAME=samplevaulrf2
+DB_USER=samplevault
+DB_PASS=samplevault
+DB_NAME=samplevault
 JWT_SECRET=tu_clave_secreta_super_segura
 NODE_ENV=production
 ```
