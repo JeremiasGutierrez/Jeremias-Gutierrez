@@ -7,7 +7,7 @@
 
 // Configuración base de la API
 // Este comentario va a dar conflicto
-const API_URL = "http://localhost:3000/api";
+const API_URL = "/api";
 
 const apiService = {
     // Función centralizada para peticiones Fetch
