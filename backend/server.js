@@ -89,16 +89,19 @@ else
     app.use('/', viewRoutes);
 }
 
-// --- Manejo de errores global ---
+// Manejo de errores global 
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: "Error en el servidor", error: err.message });
 });
+if (process.env.NODE_ENV !== 'testing' && !process.env.JEST_WORKER_ID) {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`==========================================`);
+        console.log(`🚀 SampleVault listo en:`);
+        console.log(`   Punto de entrada: http://localhost:${PORT}`);
+        console.log(`==========================================`);
+    });
+}
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`==========================================`);
-    console.log(`🚀 SampleVault listo en:`);
-    console.log(`   Punto de entrada: http://localhost:${PORT}`);
-    console.log(`==========================================`);
-});
+module.exports = app;
