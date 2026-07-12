@@ -59,7 +59,7 @@ class AuthController
         try
         {
             const { username, password } = req.body;
-
+            //de aca sale el mensaje 400
             if (!username || !password) {
                 return res.status(400).json({ message: "Credenciales incompletas." });
             }
